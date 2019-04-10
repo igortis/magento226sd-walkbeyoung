@@ -1,0 +1,10 @@
+Hello
+
+I started to work with Magento 2.2.6. Now I finished frontend task. 
+Frontend:
+ - footer (display:flex)
+ - slick-slider
+ - home page - some photos
+ - header(search, logo, minicart)
+
+​
