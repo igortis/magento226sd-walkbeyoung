@@ -1,0 +1,362 @@
+@import "slick.less";
+@import "slick-theme.less";
+
+@mycolor-gray: #606060;
+@mycolor-orange-bold: #FF8400;
+@my-color-orange: #FFA500;
+
+.slick-prev.slick-arrow{
+  background-color: @mycolor-gray;
+}
+.slick-next.slick-arrow{
+  background-color: @mycolor-gray;
+}
+.navigation{
+  text-align: center;
+  text-transform: uppercase;
+  background-color: @mycolor-gray;
+  ul{
+    li{
+      a{
+        color: #FFFFFF!important;
+      }
+    }
+  }
+}
+/* стрілки */
+.navigation .level0.parent > .level-top > .ui-menu-icon{
+  display: none;
+}
+.copyright{
+  text-align:left;
+  background-color:#ffffff;
+  color:#606060;
+}
+/* footer links */
+.footer.content {
+  .links {
+    padding-right: 0!important;
+  }
+}
+
+/* newsletter */
+.block.newsletter {
+  display: inline-block;
+  width: 30%;
+  .action.subscribe{
+    border-radius: 0;
+    text-transform: uppercase;
+    background: #606060;
+    border: 1px solid #606060;
+  }
+  .form.subscribe{
+    display: inherit;
+  }
+  .title{
+    display: inherit;
+  }
+}
+.block .title strong{
+  font-size: 1.3rem;
+}
+
+
+  .social.links {
+    list-style-type: none;
+    float:left;
+    a i{
+      background: #909090;
+      color: #fff;
+      width: 40px;
+      height: 32px;
+      border-radius: 20px;
+      font-size: 25px;
+      text-align: center;
+      margin-right: 10px;
+      padding-top: 15%;
+    }
+}
+/* header */
+.block-search{
+  float:left;
+  margin-top: 14px;
+}
+.page-header .panel.wrapper{
+  display: none;
+}
+.header.content{
+  padding-top: 5px;
+  .logo{
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 20%;
+    float: none;
+    padding: 5px;
+  }
+}
+.header.links{
+  list-style-type: none;
+  float:right;
+  margin-top: 10px;
+  margin-bottom: 0;
+    li:nth-child(1){
+      color: @mycolor-gray;
+      margin-bottom: -30px;
+      font-size: 1.2rem;
+      margin-left: 54px;
+    }
+    li:nth-child(2), li:nth-child(3){
+      display: inline-block;
+     a{
+       color:@mycolor-orange-bold;
+     }
+  }
+}
+/* Sign in or */
+.header.links li:nth-child(2):after{
+  content:" or ";
+  color:@mycolor-gray;
+}
+.header.links li:nth-child(2):before{
+  content: url('../images/forma1.png');
+  color:@mycolor-gray;
+  font-size: 3rem;
+}
+
+/* fix unicode in minicart f291 F07A f290*/
+.minicart-wrapper{
+  margin-top: 10px;
+  a:before{
+    content: url('../images/shopping-basket-32.png')!important;
+    color:@mycolor-gray;
+    font-size: 3rem;
+  }
+}
+/* Home page foto */
+.home_page_foto_one{
+  width: 100%;
+  margin-top: 5px;
+  p{
+    position: absolute;
+    top: 54%;
+    left: 72%;
+    border: 1px solid #606060;
+    padding: 10px 30px;
+    font-size: 12px;
+}
+  img{
+    width: 100%;
+  }
+}
+.home_page_foto_some{
+  width: 100%;
+  height: 420px;
+}
+.home_page_foto_two{
+  width: 49%;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
+  margin-right: 5px;
+  p{
+    position: absolute;
+    top: 85%;
+    left: 5%;
+    border: 1px solid #FFFFFF;
+    padding: 10px 30px;
+    font-size: 12px;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.home_page_foto_three{
+  width: 100%;
+  height: 50%;
+  margin: 5px 5px 8px 0;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.home_page_foto_five{
+  width: 49%;
+  height: 48%;
+  display: inherit;
+  vertical-align: top;
+  margin-right: 6px;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+.home_page_foto_four{
+  width: 49%;
+  height: 48%;
+  display: inherit;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Products */
+.actions-primary{
+  button{
+    background-color: @my-color-orange!important;
+    border: 1px solid @my-color-orange!important;
+    text-transform:uppercase;
+  }
+
+}
+.actions-primary button:hover{
+  background-color: @mycolor-orange-bold!important;
+  border: 1px solid @mycolor-orange-bold!important;
+}
+
+  /* media */
+@media (min-width: 320px) and (max-width: 550px) {
+  .footer.content {
+    ul{
+      /*padding-left: 40px!important;*/
+    }
+    .links{
+      display: inherit!important;
+    }
+  }
+  .block.newsletter {
+    width: 100%!important;
+  }
+  .home_page_foto_some{
+    height: 180px;
+  }
+  .home_page_foto_two, .home_page_foto_four, .home_page_foto_five{
+    width: 47%;
+  }
+  .home_page_foto_one{
+    p{
+      font-size: 8px;
+      padding: 4px 10px;
+      left: 70%;
+    }
+  }
+  .home_page_foto_two{
+    p{
+      font-size: 8px;
+      padding: 4px 10px;
+    }
+  }
+ }
+@media (min-width: 551px) and (max-width: 767px) {
+  .block.newsletter {
+    width: 70%!important;
+  }
+  .home_page_foto_some{
+    height: 260px;
+  }
+  .home_page_foto_five{
+    width: 48%;
+  }
+  .home_page_foto_one{
+    p{
+      left: 70%;
+      padding: 8px 24px;
+    }
+  }
+  .home_page_foto_two{
+    width: 48%;
+    p{
+      padding: 8px 24px;
+    }
+  }
+  .header.content{
+    .logo{
+      margin-left: 8%;
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 809px) {
+  .footer.content{
+    ul{
+      padding-right: 10px!important;
+    }
+  }
+  .home_page_foto_some{
+    height: 280px;
+  }
+  .home_page_foto_two, .home_page_foto_five, .home_page_foto_four{
+    width: 48%;
+  }
+  .home_page_foto_five{
+    margin-right: 10px;
+  }
+  .home_page_foto_one{
+    p{
+      left: 70%;
+    }
+  }
+  .header.content{
+    .logo{
+      margin-left: 8%;
+    }
+  }
+}
+@media (min-width: 810px) and (max-width: 910px) {
+  .footer.content{
+    ul{
+      padding-right: 25px!important;
+    }
+  }
+  .home_page_foto_some{
+    height: 320px;
+  }
+  .home_page_foto_two{
+    width: 48%;
+  }
+  .home_page_foto_five{
+    width: 48%;
+    margin-right: 8px;
+  }
+}
+@media (min-width: 911px) and (max-width: 1023px) {
+  .footer.content{
+    ul{
+      padding-right: 40px!important;
+    }
+  }
+  .home_page_foto_five{
+    width: 48%;
+    margin-right: 9px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .footer.content{
+    ul{
+      padding-right: 70px!important;
+    }
+  }
+}
+@media (min-width: 1201px) and (max-width: 1439px) {
+  .footer.content{
+    ul{
+      padding-right: 100px!important;
+    }
+  }
+}
+@media (min-width: 1440px) and (max-width: 2560px) {
+  .footer.content{
+    ul{
+      padding-right: 130px!important;
+    }
+  }
+  .home_page_foto_some{
+    height: 460px;
+  }
+  .home_page_foto_five, .home_page_foto_two{
+    margin-right: 8px;
+  }
+}
+
+
