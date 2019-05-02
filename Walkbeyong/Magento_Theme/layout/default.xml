@@ -9,6 +9,12 @@
 
 
         <move element="header.links" destination="header-wrapper" after="-" />
+        
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="avatar" template="Magento_Theme::avatar.phtml" before="-"/>
+        </referenceContainer>
+
+        <move element="avatar" destination="header-wrapper" before="header.links" />
 
     </body>
 </page>
