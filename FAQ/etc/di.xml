@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!--  start join two tables -->
+    <type name="DevLab\FAQ\Model\ResourceModel\FAQ\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">devlab_faq</argument>
+            <argument name="eventPrefix" xsi:type="string">devlab_faq_grid_collection</argument>
+            <argument name="eventObject" xsi:type="string">devlab_faq_collection</argument>
+            <argument name="resourceModel" xsi:type="string">DevLab\FAQ\Model\ResourceModel\FAQ</argument>
+        </arguments>
+    </type>
+    <!--  end join two tables -->
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="devlab_faq_grid_data_source" xsi:type="string">DevLab\FAQ\Model\ResourceModel\FAQ\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
