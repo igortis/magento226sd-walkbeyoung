@@ -6,21 +6,44 @@
 @mycolor-gray: #5A6465;
 @mycolor-gray-subscribe: #505050;
 @mycolor-gray-header-link: #7E7E7E;
+@mycolor-gray-button-faq: #B7B7B7;
+@mycolor-gray-button-panel: #434343;
 @mycolor-orange-bold: #FF7E00;
 @mycolor-orange: #FFA800;
+@mycolor-orange-button-faq: #F7941D;
 @mycolor-orange-header-link: #FFAA00;
 @mycolor-white: #FFFFFF;
 @mycolor-blue:#184F94;
 @mycolor-gray-footer: #919191;
+@mycolor-gray-accordion: #C0C0C0;
 
 
 @font-face {
   font-family: MyCustomFont;
   src: url('../fonts/Avalon.ttf');
   font-style: normal;
-
 }
+@font-face {
+  font-family: MyCustomFont-FAQ;
+  src: url('../fonts/FreeSerif.ttf');
+  font-style: normal;
+}
+@font-face {
+  font-family: MyCustomFont-Main-FAQ;
+  src: url('../fonts/Alice-Regular.ttf');
+  font-style: normal;
+}
+@font-face {
+  font-family: MyCustomFont-Text-FAQ;
+  src: url('../fonts/COPILME_L.ttf');
+  font-style: normal;
+}
+
+
 body { font-family:MyCustomFont; }
+
+
+
 
 /*
 .slick-prev.slick-arrow{
@@ -30,7 +53,7 @@ body { font-family:MyCustomFont; }
   background-color: @mycolor-gray;
 }
 */
-/* стрілки */
+/* ÑÑ‚Ñ€Ñ–Ð»ÐºÐ¸ */
 .navigation .level0.parent > .level-top > .ui-menu-icon{
   display: none;
 }
@@ -786,6 +809,158 @@ body { font-family:MyCustomFont; }
   .page-layout-2columns-left .column.main{
     /*width: 100%;*/
   }
+
+  /* FAQ */
+/* Button SEND */
+
+.action.submit.primary{
+  width: 160px;
+  margin: 5px 30px 50px 40px!important;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+/* FAQ */
+.page-title-wrapper{
+  color:@mycolor-gray;
+  font-family: MyCustomFont-Main-FAQ;
+  margin-left: 2%;
+  margin-top: 40px;
+  h1{
+    margin-bottom: 30px;
+    margin-top: 40px;
+  }
+}
+.colums{
+  display: inline-block;
+  width: 100%;
+}
+.page-layout-2columns-left .column.main{
+  width: 100%;
+}
+.table.table-striped.table-dark{
+  width: 65%;
+  display: inline-block;
+  float: left;
+  margin-right: 6%;
+}
+#faq-test-form{
+  width: 24%;
+  display: inline-block;
+  background: @mycolor-gray;
+  position: absolute;
+  margin-top: -50px;
+  .action.primary {
+    background: @mycolor-orange-button-faq;
+    border: 1px solid @mycolor-orange-button-faq;
+    font-size: 2.0rem;
+  }
+  .field.question{
+    margin: 10px 40px 10px 40px;
+    .input-text{
+      background: @mycolor-gray-button-faq;
+      border: 1px solid @mycolor-gray-button-faq;
+      color: @mycolor-white;
+      font-size: 2.0rem;
+    }
+  }
+  .fieldset{
+    margin: 0;
+  }
+}
+
+.field.email{
+  display: none;
+}
+
+.field.note.no-label{
+  margin: 30px 30px 10px 40px;
+  color: @mycolor-white;
+  font-size: 3.0rem;
+  font-family: MyCustomFont-FAQ;
+}
+
+/* accordion list */
+.accordion {
+  /*background-color: #eee;
+  color: #444;
+  */
+  cursor: pointer;
+  padding: 18px;
+  width: 95%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  background: none;
+
+}
+.active, .accordion:hover {
+  /*background-color: #ccc;*/
+}
+.panel {
+  padding: 0 32px 0 52px;
+  /*background-color: white;*/
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  color:@mycolor-gray-button-panel;
+
+}
+.my-line-accordion{
+  border-bottom: 1px solid @mycolor-gray-accordion;
+  margin-left: 24px;
+  margin-top:15px;
+}
+.accordion:after {
+  content
+  : '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #000000;
+  float: left;
+  margin-left: 5px;
+  margin-right: 20px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.class-accordion{
+  display: inline-block;
+  width: 70%;
+  margin-right: 3%;
+  margin-left: -2%;
+
+  .accordion{
+    border:none;
+    font-family: MyCustomFont-FAQ;
+    font-size: 2.0rem;
+    }
+  .panel{
+    font-family: MyCustomFont-Text-FAQ;
+    font-size: 1.9rem;
+    line-height: 1.1;
+  }
+  button:hover {
+      background: none;
+      border: none;
+    }
+
+  button:focus{
+    background: none;
+    border: none;
+  }
+  button:not(.primary){
+    box-shadow:none;
+  }
+}
+
+.table.table-striped.table-dark{
+  display: none;
+}
+/* accordion other */
+
 
 
 /* content: url('../images/searsh.png')!important; */
