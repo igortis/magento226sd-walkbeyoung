@@ -1,0 +1,42 @@
+
+<?php foreach ($block->getFAQ() as $item): ?>
+    <button class="accordion"><?php echo $item->getFirstname(); ?></button>
+    <div class="panel">
+        <p><?php echo $item->getQuestion(); ?></p>
+    </div>
+<?php endforeach; ?>
+
+<?php foreach ($block->getFAQ() as $item): ?>
+
+<?php endforeach; ?>
+
+
+<table class="table table-striped table-dark">
+    <tbody>
+    <?php foreach ($block->getFAQ() as $item): ?>
+        <tr>
+
+            <td><?php echo $item->getFirstname(); ?></td>
+            <td><?php echo $item->getQuestion(); ?></td>
+
+        </tr>
+  <?php endforeach; ?>
+    </tbody>
+</table>
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight){
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    }
+</script>
