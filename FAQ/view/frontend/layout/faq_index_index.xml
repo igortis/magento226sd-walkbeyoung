@@ -1,0 +1,25 @@
+<?xml	version="1.0"?>
+<page	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         layout="2columns-left"
+         xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>FAQ</title>
+    </head>
+    <body>
+        <referenceContainer	name="content">
+            <block name="devlab_faqlistdata" class="DevLab\FAQ\Block\FAQListData"
+                   template="list.phtml"/>
+            <block class="DevLab\FAQ\Block\FAQ" name="testContactForm"
+                   template="DevLab_FAQ::test.phtml" />
+            <!--<block	class="DevLab\Testimonials\Block\Testimonials"
+                      name="testimonialsblock"	template="DevLab_Testimonials::testimonials.phtml"	/>
+
+
+            <block class="Magento\Contact\Block\ContactForm" name="customContactForm"
+                   template="DevLab_Testimonials::form.phtml" />
+            -->
+        </referenceContainer>
+
+
+    </body>
+</page>

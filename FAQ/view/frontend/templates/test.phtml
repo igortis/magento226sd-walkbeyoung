@@ -1,0 +1,43 @@
+<?php
+//echo 'This is a simple custom module and it does not include admin and database realted files.';
+//.'faq/index/index'
+?>
+<form class="" action="<?php echo $block->getBaseUrl(); ?>" id="faq-test-form" method="post">
+    <fieldset class="fieldset">
+       <?php
+        // <legend class="legend"><span>Test Form For DevLab_FAQ Module</span></legend><br>
+        ?>
+        <div class="field note no-label">Ask me question</div>
+        <?php
+        // <div class="field name">
+        //    <label class="label" for="name"><span>Name</span></label>
+        //    <div class="control">
+        //        <input name="name" id="name" title="Name" value="" class="input-text" type="text">
+        //    </div>
+        //</div>
+        ?>
+        <div class="field email">
+            <?php
+            // <label class="label" for="email"><span>Email</span></label>
+            ?>
+            <div class="control">
+                <input name="email" id="email" title="Email" value="" class="input-text" type="text">
+            </div>
+        </div>
+        <div class="field question">
+            <?php
+            // <label class="label" for="content"><span>Question</span></label>
+            ?>
+            <div class="control">
+                <textarea name="question" id="question" title="Question" class="input-text" cols="5" rows="3"></textarea>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" title="SEND" class="action submit primary">
+                <span>SEND</span>
+            </button>
+        </div>
+    </div>
+</form>
