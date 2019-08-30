@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="DevLab_FAQ::faq" title="FAQ"
+             module="DevLab_FAQ" resource="DevLab_FAQ::faq"
+             translate="title" sortOrder="900" action="faq"/>
+    </menu>
+</config>
