@@ -79,11 +79,15 @@ class Save extends Action
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $customerSession = $objectManager->create('Magento\Customer\Model\Session');
         if ($customerSession->isLoggedIn() == true) {
-            $this->messageManager->addSuccess(__('This user can add question because he is registred'));
-            /** save custom data */
-            /**$customerSession->getCustomer();*/
-            $FAQModel->setData('question', $data['question']);
-            $FAQModel->setData('customer_id', $customerSession->getCustomer()->getId());
+            /** check field is not null */
+            if ( $data['question'] !="") {
+                /** save custom data */
+                $this->messageManager->addSuccess(__('This user can add question because he is registred'));
+                $FAQModel->setData('question', $data['question']);
+                $FAQModel->setData('customer_id', $customerSession->getCustomer()->getId());
+            } else {
+                $this->messageManager->addSuccess(__('Field Question is empty. Please add some worlds.'));
+            }
             /**
             $FAQModel->setData('name', $customerSession->getCustomer()->getName());
             */
