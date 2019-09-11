@@ -33,7 +33,20 @@ class UpgradeSchema implements UpgradeSchemaInterface
                 ]
             );
         }
+        
+        if (version_compare($context->getVersion(), '1.0.2', '<')) {
+            $setup->getConnection()->dropColumn(
+                $setup->getTable('devlab_faq'),'name');
+        }
+        if (version_compare($context->getVersion(), '1.0.3', '<')) {
+            $setup->getConnection()->dropColumn(
+                $setup->getTable('devlab_faq'),'email');
 
+            $setup->getConnection()->dropColumn(
+                $setup->getTable('devlab_faq'),'creation_time');
+
+        }
+        
         $setup->endSetup();
     }
 }
