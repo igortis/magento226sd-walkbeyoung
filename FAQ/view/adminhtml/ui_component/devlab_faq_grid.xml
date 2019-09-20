@@ -40,7 +40,7 @@
         <paging name="listing_paging"/>
         <!--<frontendLink name="frontend_link"/> -->
         <!-- Action Delete record devlab_faq/post/massDelete -->
-        <massaction name="listing_massaction">
+        <massaction name="listing_massaction" component="Magento_Ui/js/grid/tree-massactions">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="selectProvider" xsi:type="string">devlab_faq_grid.devlab_faq_grid.devlab_faq_columns.ids</item>
@@ -70,6 +70,33 @@
                     <label translate="true">Edit</label>
                 </settings>
             </action>
+            <!-- Action Change Status -->
+            <action name="status">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">status</item>
+                        <item name="label" xsi:type="string" translate="true">Change status</item>
+                    </item>
+                </argument>
+                <argument name="actions" xsi:type="array">
+                    <item name="0" xsi:type="array">
+                        <item name="type" xsi:type="string">enable</item>
+                        <item name="label" xsi:type="string" translate="true">Enable</item>
+                        <item name="url" xsi:type="url" path="faq/index/massStatus">
+                            <param name="status">1</param>
+                        </item>
+                    </item>
+                    <item name="1" xsi:type="array">
+                        <item name="type" xsi:type="string">disable</item>
+                        <item name="label" xsi:type="string" translate="true">Disable</item>
+                        <item name="url" xsi:type="url" path="faq/index/massStatus">
+                            <param name="status">0</param>
+                        </item>
+                    </item>
+                </argument>
+            </action>
+
+
         </massaction>
     </listingToolbar>
     <columns name="devlab_faq_columns">
@@ -147,6 +174,21 @@
                 </item>
             </argument>
         </column>
+        <!-- Add column status -->
+        <column name="status">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">DevLab\FAQ\Ui\Component\Listing\Column\Status</item><item name="config" xsi:type="array">
+                <item name="sortOrder" xsi:type="number">60</item>
+                <item name="filter" xsi:type="string">select</item> <item name="label" translate="true" xsi:type="string">Status</item>
+                <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
+                <item name="dataType" xsi:type="string">select</item>
+                <item name="editor" xsi:type="array">
+                    <item name="editorType" xsi:type="string">select</item>
+                </item>
+            </item>
+            </argument>
+        </column>
 
-    </columns>
-</listing>
+
+        </columns>
+    </listing>
