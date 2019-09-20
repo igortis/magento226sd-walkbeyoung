@@ -33,7 +33,6 @@ class UpgradeSchema implements UpgradeSchemaInterface
                 ]
             );
         }
-        
         if (version_compare($context->getVersion(), '1.0.2', '<')) {
             $setup->getConnection()->dropColumn(
                 $setup->getTable('devlab_faq'),'name');
@@ -46,7 +45,18 @@ class UpgradeSchema implements UpgradeSchemaInterface
                 $setup->getTable('devlab_faq'),'creation_time');
 
         }
-        
+        if (version_compare($context->getVersion(), '1.0.4', '<')) {
+            $setup->getConnection()->addColumn(
+                $setup->getTable('devlab_faq'),
+                'status',
+                [
+                    'type' => Table::TYPE_SMALLINT,
+                    'nullable' => true,
+                    'comment' => 'Status'
+                ]
+            );
+        }
+
         $setup->endSetup();
     }
 }
