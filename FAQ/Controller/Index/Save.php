@@ -65,29 +65,26 @@ class Save extends Action
         $data               = $this->getRequest()->getPost();
         $date               = date('Y-m-d h:i:sa');
 
-        /** try other new code */
-        //CHECK IF LOGGED IN
-        /**if($session->isLoggedIn()){
-            $this->messageManager->addSuccess(__('Your question has been saved Ok'));
-        } else {
-            $this->messageManager->addSuccess(__('Your question has been saved Not'));
-        }
-*/
 
 
         /** Start new code */
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $customerSession = $objectManager->create('Magento\Customer\Model\Session');
         if ($customerSession->isLoggedIn() == true) {
+
+
             /** check field is not null */
             if ( $data['question'] !="") {
                 /** save custom data */
                 $this->messageManager->addSuccess(__('This user can add question because he is registred'));
                 $FAQModel->setData('question', $data['question']);
+                /** status disable */
+                $FAQModel->setData('status', 0);
                 $FAQModel->setData('customer_id', $customerSession->getCustomer()->getId());
             } else {
                 $this->messageManager->addSuccess(__('Field Question is empty. Please add some worlds.'));
             }
+
             /**
             $FAQModel->setData('name', $customerSession->getCustomer()->getName());
             */
