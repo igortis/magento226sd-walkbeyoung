@@ -45,13 +45,12 @@ class Index extends Action
         $resultPage->getConfig()->getTitle()->set(
             $this->scopeConfig->getValue('faq/general/title', ScopeInterface::SCOPE_STORE)
         );
-        $resultPage->getConfig()->getTitle()->set(
+        $resultPage->getConfig()->setKeywords(
             $this->scopeConfig->getValue('faq/general/keywords', ScopeInterface::SCOPE_STORE)
         );
-        $resultPage->getConfig()->getTitle()->set(
+        $resultPage->getConfig()->setDescription(
             $this->scopeConfig->getValue('faq/general/description', ScopeInterface::SCOPE_STORE)
         );
-
         return $resultPage;
     }
 }
