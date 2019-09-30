@@ -150,11 +150,30 @@
             </argument>
         </column>
         <!-- end add column from customer_entity -->
+        <!-- now not use because i add edit
         <column name="question">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Question</item>
+                </item>
+            </argument>
+        </column>
+        -->
+
+        <column name="question">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">text</item>
+                    <item name="label" translate="true" xsi:type="string">Question</item>
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">10</item>
+                    <item name="editor" xsi:type="array">
+                        <item name="editorType" xsi:type="string">text</item>
+                        <item name="validation" xsi:type="array">
+                            <item name="required-entry" xsi:type="boolean">false</item>
+                        </item>
+                    </item>
                 </item>
             </argument>
         </column>
