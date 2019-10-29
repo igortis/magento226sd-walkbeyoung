@@ -45,6 +45,7 @@ class Update extends \Magento\Framework\App\Action\Action
         $model->setQuestion( $params['question'] );
         $model->save();
 
+        
         /** add flush cache */
         $types = array('db_ddl');
         foreach ($types as $type) {
