@@ -1,11 +1,15 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <faq>
             <general>
                 <enable>1</enable>
                 <display_text>DevLab_FAQ</display_text>
             </general>
+            <email>
+                <send_email>devlab_faq_email_template</send_email>
+            </email>
         </faq>
     </default>
 </config>
