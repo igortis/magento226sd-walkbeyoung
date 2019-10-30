@@ -11,6 +11,10 @@ class	FAQ	extends	Template
 {
     public	function	getBaseUrl()
     {
-        return	$this->getUrl('faq/index/save');
+        return	$this->getUrl('faq/index/saveajax');
+    }
+    public	function	getBaseUpdateUrl()
+    {
+        return	$this->getUrl('/magento226sd.com/faq/index/update');
     }
 }
