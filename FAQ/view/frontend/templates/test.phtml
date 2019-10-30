@@ -1,8 +1,9 @@
 <?php
 //echo 'This is a simple custom module and it does not include admin and database realted files.';
-//.'faq/index/index'
+//.'faq/index/index
+//<?php echo $block->getBaseUrl();
 ?>
-<form class="" action="<?php echo $block->getBaseUrl(); ?>" id="faq-test-form" method="post">
+<form class="" name="form_question" action="<?php echo $block->getBaseUrl(); ?>" id="faq-test-form" method="post">
     <fieldset class="fieldset">
        <?php
         // <legend class="legend"><span>Test Form For DevLab_FAQ Module</span></legend><br>
@@ -41,3 +42,27 @@
         </div>
     </div>
 </form>
+
+<!-- 07-10-2019 try to add AJAX-->
+<script>
+    var frm = $('#faq-test-form');
+
+    frm.submit(function (e) {
+
+        e.preventDefault();
+
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),
+            data: frm.serialize(),
+            success: function (data) {
+                console.log('Submission was successful.');
+                console.log(data);
+            },
+            error: function (data) {
+                console.log('An error occurred.');
+                console.log(data);
+            },
+        });
+    });
+</script>
