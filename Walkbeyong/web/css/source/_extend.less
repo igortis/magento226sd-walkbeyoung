@@ -53,7 +53,7 @@ body { font-family:MyCustomFont; }
   background-color: @mycolor-gray;
 }
 */
-/* ÑÑ‚Ñ€Ñ–Ð»ÐºÐ¸ */
+/* стрілки */
 .navigation .level0.parent > .level-top > .ui-menu-icon{
   display: none;
 }
@@ -851,8 +851,8 @@ body { font-family:MyCustomFont; }
   position: absolute;
   margin-top: -50px;
   .field.email{
-  display: none;
-}
+    display: none;
+  }
   .action.primary {
     background: @mycolor-orange-button-faq;
     border: 1px solid @mycolor-orange-button-faq;
@@ -871,6 +871,8 @@ body { font-family:MyCustomFont; }
     margin: 0;
   }
 }
+
+
 
 .field.note.no-label{
   margin: 30px 30px 10px 40px;
@@ -955,8 +957,44 @@ body { font-family:MyCustomFont; }
   }
 }
 
-/* accordion other */
 
+/* update delete data from devlab_faq */
+.table.table-striped.table-dark{
+  td{
+    width: 500px;
+    form{
+      display: flex;
+    }
+  }
 
+}
+#myupdate{
+  margin-left: 20px;
+}
+#myupdate, #mydelete{
+  background: @mycolor-orange-button-faq;
+  border: @mycolor-orange-button-faq;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+#myupdate:hover, #mydelete:hover{
+    background: @mycolor-orange;
+    border:@mycolor-orange;
+  }
 
+.table.table-striped.table-dark{
+  td{
+    width: 100%;
+  }
+  width: 100%;
+}
+.my_update_p_user{
+  margin-left: 10px;
+  margin-right: 10px;
+  background: @mycolor-orange-button-faq;
+  padding: 2px 5px 2px 5px;
+  font-weight: bold;
+  color: @mycolor-white;
+}
 /* content: url('../images/searsh.png')!important; */
