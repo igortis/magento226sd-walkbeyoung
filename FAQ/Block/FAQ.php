@@ -11,7 +11,7 @@ class	FAQ	extends	Template
 {
     public	function	getBaseUrl()
     {
-        return	$this->getUrl('faq/index/saveajax');
+        return	$this->getUrl('faq/index/save');
     }
     public	function	getBaseUpdateUrl()
     {
