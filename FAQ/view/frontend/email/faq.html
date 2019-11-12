@@ -1,10 +1,11 @@
-{{template config_path="design/email/header_template"}}
-<table>
-    <tr class="email-intro">
-        <td>
-            Question: {{var question}}
-        </td>
-    </tr>
-</table>
+<!--@subject {{trans "A new testimonial was creates on the site"}} @-->
+<!--@vars {
+"var data.full_name":"Sender Full Name",
+"var data.email":"Sender Email",
+"var data.question":"FAQ"
+} @-->
 
-{{template config_path="design/email/footer_template"}}
+
+{{trans "Name: %full_name" full_name=$data.full_name}}
+{{trans "Email: %email" email=$data.email}}
+{{trans "FAQ: %question" question=$data.question}}
