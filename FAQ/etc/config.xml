@@ -8,7 +8,7 @@
                 <display_text>DevLab_FAQ</display_text>
             </general>
             <email>
-                <send_email>devlab_faq_email_template</send_email>
+                <send_template>devlab_faq_email_template</send_template>
             </email>
         </faq>
     </default>
