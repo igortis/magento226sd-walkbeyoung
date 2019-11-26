@@ -1,22 +1,20 @@
 <!-- start new code  06-10-2019 -->
 <?php
 $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$customerSession = $objectManager->create('Magento\Customer\Model\Session')
+$customerSession = $objectManager->create('Magento\Customer\Model\Session');
 ?>
 <p class="my_update_p_user"><?php echo $customerSession->getCustomer()->getFirstname()." ".$customerSession->getCustomer()->getLastname()?></p>
 
 <table class="table table-striped table-dark">
     <tbody>
-    <?php foreach ($block->getFAQ() as $item): ?>
+    <?php foreach ($block->getFAQfilterbyfield() as $item): ?>
         <?php if ($item->getStatus() == 1){
             ?>
-            <!-- filter field customer_id  -->
-            <?php if ($item->getCustomer_id() == $customerSession->getCustomer()->getId()){
-                ?>
+
                 <tr>
 
                     <td>
-                        <form action="/magento226sd.com/faq/index/update" method="post">
+                        <form action="<?php echo $block->getBaseUpdateUrl(); ?>" method="post">
                             <input type="hidden" name="faqid" value="<?php echo $item->getFaq_id(); ?>">
                             <input type="text" name="question" value="<?php echo $item->getQuestion(); ?>">
                             <input type="submit" value="update" class="action primary" id="myupdate">
@@ -24,17 +22,15 @@ $customerSession = $objectManager->create('Magento\Customer\Model\Session')
                         </form>
                     </td>
                     <td>
-                        <form action="/magento226sd.com/faq/index/delete" method="post">
+                        <form action="<?php echo $block->getBaseDeleteUrl(); ?>" method="post">
                             <input type="hidden" name="faqid" value="<?php echo $item->getFaq_id(); ?>">
                             <input type="submit" value="delete" class="action primary" id="mydelete">
                         </form>
                     </td>
                    </tr>
-                <?php
-            }
-            ?>
-            <?php
-        }
+
+        <?php
+    }
         ?>
     <?php endforeach; ?>
     </tbody>
