@@ -127,20 +127,20 @@ body { font-family:MyCustomFont; }
   color:#999999;
 }
 
-  .social.links {
-    list-style-type: none;
-    float:left;
-    a i{
-      background: #A1A1A1;
-      color: #fff;
-      width: 34px;
-      height: 26px;
-      border-radius: 20px;
-      font-size: 20px;
-      text-align: center;
-      margin-right: 8px;
-      padding-top: 15%;
-    }
+.social.links {
+  list-style-type: none;
+  float:left;
+  a i{
+    background: #A1A1A1;
+    color: #fff;
+    width: 34px;
+    height: 26px;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: center;
+    margin-right: 8px;
+    padding-top: 15%;
+  }
 }
 /* header */
 .block-search{
@@ -172,24 +172,30 @@ body { font-family:MyCustomFont; }
   margin-top: 30px;
   margin-bottom: 0;
   padding-left: 0;
-    li:nth-child(1){
-      color: @mycolor-gray-header-link;
-      margin-bottom: -2px;
-      font-size: 1.3rem;
-      /*margin-left: 54px;*/
+  li:nth-child(1){
+    color: @mycolor-gray-header-link;
+    margin-bottom: -2px;
+    font-size: 1.3rem;
+    /*margin-left: 54px;*/
+  }
+  li:nth-child(2), li:nth-child(3){
+    display: inline-block;
+    font-size: 1.3rem;
+    a{
+      color: @mycolor-orange-header-link;
     }
-    li:nth-child(2), li:nth-child(3){
-      display: inline-block;
-      font-size: 1.3rem;
-     a{
-       color: @mycolor-orange-header-link;
-     }
   }
 }
 /* Sign in or */
 .header.links li:nth-child(2):after{
   content:" or ";
   color:@mycolor-gray;
+  /* add this css becouse block SignIn is not good showed */
+  display:inline-block;
+}
+
+.header.links .customer-welcome .action.switch{
+  display: none;
 }
 
 /* fix unicode in minicart f291 F07A f290*/
@@ -218,7 +224,7 @@ body { font-family:MyCustomFont; }
     border: 1px solid @mycolor-gray;
     padding: 10px 50px;
     font-size: 12px;
-}
+  }
   img{
     width: 100%;
   }
@@ -291,7 +297,7 @@ body { font-family:MyCustomFont; }
   border: 1px solid @mycolor-orange-bold!important;
 }
 
-  /* media */
+/* media */
 @media (min-width: 320px) and (max-width: 550px) {
   .footer.content {
     ul{
@@ -358,7 +364,7 @@ body { font-family:MyCustomFont; }
       font-size: 1.2rem;
     }
   }
- }
+}
 @media (min-width: 551px) and (max-width: 767px) {
   .block.newsletter {
     width: 70%!important;
@@ -413,10 +419,10 @@ body { font-family:MyCustomFont; }
     margin-top: 2px;
     margin-right: 3px;
   }
-.home_page_foto_three{
-  margin: 2px 5px 6px 0!important;
-}
-.home_page_foto_four{
+  .home_page_foto_three{
+    margin: 2px 5px 6px 0!important;
+  }
+  .home_page_foto_four{
     width: 49%;
   }
   .home_page_foto_five{
@@ -651,11 +657,11 @@ body { font-family:MyCustomFont; }
 .navigation .level0.submenu{
   font-size: 13px;
   .level1.nav-2-1, .level1.nav-3-1,.level1.nav-4-1{
-      a{
-        padding-top: 20px;
-        padding-bottom: 1px;
-      }
+    a{
+      padding-top: 20px;
+      padding-bottom: 1px;
     }
+  }
   .level1.nav-2-2, .level1.nav-3-2, .level1.nav-4-3{
     a{
       padding-top: 1px;
@@ -725,10 +731,10 @@ body { font-family:MyCustomFont; }
     margin:0 0 5px;
   }
   a:hover {
-      text-decoration: none;
-      color: @mycolor-blue;
-      font-weight: 600;
-    }
+    text-decoration: none;
+    color: @mycolor-blue;
+    font-weight: 600;
+  }
 }
 .footer.content .links a{
   /*font-family:@font-footer;*/
@@ -736,82 +742,69 @@ body { font-family:MyCustomFont; }
   font-size: 500;
 }
 
-  .product-item-name a{
-    font-weight: 600;
-    font-size: 1.7rem;
+.product-item-name a{
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+/* arrows products */
+.slick-prev{
+  left: -35px;
+  top:40%;
+  :hover{
+    border: none;
   }
-  /* arrows products */
-  .slick-prev{
-    left: -35px;
-    top:40%;
-    :hover{
-      border: none;
-    }
+}
+.slick-next{
+  right: -10px;
+  top:40%;
+  :hover{
+    border: none;
   }
-  .slick-next{
-    right: -10px;
-    top:40%;
-    :hover{
-      border: none;
-    }
-  }
-  .slick-prev:before{
-    content: url('../images/arrow_left.png')!important;
-  }
-  .slick-next:before{
-    content: url('../images/arrow_right.png')!important;
-  }
+}
+.slick-prev:before{
+  content: url('../images/arrow_left.png')!important;
+}
+.slick-next:before{
+  content: url('../images/arrow_right.png')!important;
+}
 
-  .slick-track{
-    width: 7480px!important;
+.slick-track{
+  width: 7480px!important;
+}
+.slick-slide{
+  width: 310px;
+  margin-right: 4px;
+}
+.slick-dots{
+  display: none!important;
+}
+.block.widget .products-grid .product-item{
+  margin-bottom: 0!important;
+}
+.custom_naw_title{
+  margin-top: 6px!important;
+  margin-bottom: 14px!important;
+}
+/* check after Yura`s remarks  it`s here and previously 13-06-2019*/
+.navigation{
+  .level0.has-active > .level-top{
+    color:@mycolor-white;
+    border-style:none;
   }
-  .slick-slide{
-    width: 310px;
-    margin-right: 4px;
+  .level0.active > .level-top, .level0 .submenu .active > a{
+    border-style:none;
   }
-  .slick-dots{
-    display: none!important;
-  }
-  .block.widget .products-grid .product-item{
-    margin-bottom: 0!important;
-  }
-  .custom_naw_title{
-    margin-top: 6px!important;
-    margin-bottom: 14px!important;
-  }
-  /* check after Yura`s remarks  it`s here and previously 13-06-2019*/
-  .navigation{
-    .level0.has-active > .level-top{
-      color:@mycolor-white;
-      border-style:none;
-    }
-    .level0.active > .level-top, .level0 .submenu .active > a{
-      border-style:none;
-    }
-  }
-  .block-search input{
-    border:1px solid #CCCCCC;
-  }
-  .block-search input::placeholder { /* Firefox, Chrome, Opera */
-    color: #CCCCCC;
-  }
+}
+.block-search input{
+  border:1px solid #CCCCCC;
+}
+.block-search input::placeholder { /* Firefox, Chrome, Opera */
+  color: #CCCCCC;
+}
 
 
-  /* Testimonials */
-  .sidebar.sidebar-additional{
-    display: none;
-  }
-  #testimonials-test-form{
-    width:40%;
-    margin-top:5%;
-    float:right;
-  }
-  .page-layout-2columns-left .column.main{
-    /*width: 100%;*/
-  }
+/* FAQ */
 
-  /* FAQ */
-/* Button SEND */
 
 .action.submit.primary{
   width: 160px;
@@ -937,16 +930,16 @@ body { font-family:MyCustomFont; }
     border:none;
     font-family: MyCustomFont-FAQ;
     font-size: 2.0rem;
-    }
+  }
   .panel{
     font-family: MyCustomFont-Text-FAQ;
     font-size: 1.9rem;
     line-height: 1.1;
   }
   button:hover {
-      background: none;
-      border: none;
-    }
+    background: none;
+    border: none;
+  }
 
   button:focus{
     background: none;
@@ -979,9 +972,9 @@ body { font-family:MyCustomFont; }
   border-radius: 10px;
 }
 #myupdate:hover, #mydelete:hover{
-    background: @mycolor-orange;
-    border:@mycolor-orange;
-  }
+  background: @mycolor-orange;
+  border:@mycolor-orange;
+}
 
 .table.table-striped.table-dark{
   td{
@@ -989,12 +982,22 @@ body { font-family:MyCustomFont; }
   }
   width: 100%;
 }
-.my_update_p_user{
-  margin-left: 10px;
-  margin-right: 10px;
-  background: @mycolor-orange-button-faq;
-  padding: 2px 5px 2px 5px;
-  font-weight: bold;
-  color: @mycolor-white;
+
+
+
+.sidebar.sidebar-additional{
+  display: none;
 }
+#testimonials-test-form{
+  width:40%;
+  margin-top:5%;
+  float:right;
+}
+.page-layout-2columns-left .column.main{
+  /*width: 100%;*/
+}
+
+
+
+
 /* content: url('../images/searsh.png')!important; */
