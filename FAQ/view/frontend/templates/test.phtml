@@ -2,9 +2,10 @@
 //echo 'This is a simple custom module and it does not include admin and database realted files.';
 //.'faq/index/index
 //<?php echo $block->getBaseUrl();
+//
 ?>
 
-<form class="" name="form_question" action="<?php echo $block->getBaseUrl(); ?>" id="faq-test-form" method="post">
+<form class="" name="form_question" id="faq-test-form" action="<?= $block->getUrl('faq/index/save') ?>" method="post">
 
     <fieldset class="fieldset">
        <?php
@@ -45,28 +46,28 @@
     </div>
 </form>
 
-<!-- 07-10-2019 try to add AJAX -->
 <script>
-    var frm = $('#faq-test-form');
-
-    frm.submit(function (e) {
-
+    $(document).on('submit', '#faq-test-form', function(e) {
         e.preventDefault();
+        var url = $(this).attr('action');
 
         $.ajax({
-            type: frm.attr('method'),
-            url: frm.attr('action'),
-            data: frm.serialize(),
-            dataType: 'json',
-            success: function (data) {
-                console.log('Submission was successful.');
-                console.log(data);
-            },
-            error: function (data) {
-                console.log('An error occurred.');
-                console.log(data);
-            },
+            showLoader: true,
+            url: url,
+            data: $(this).serialize(),
+            type: "POST",
+            dataType: 'json'
+        }).done(function (response) {
+            var message = response.message;
+            if(response.errors === false) {
+                 setTimeout(function () {
+                    $('.close').click();
+                }, 5000)
+            } else {
+                alert(message);
+            }
         });
     });
 </script>
+
 
