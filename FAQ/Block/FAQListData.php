@@ -52,7 +52,8 @@ class FAQListData extends Template
 
         }
         else {
-            $collection = $this->collectionFactory->create();
+            $collection = $this->collectionFactory->create()
+                ->addFieldToFilter('customer_id', '0');
         }
 
 
