@@ -8,10 +8,7 @@
 namespace DevLab\FAQ\Block;
 
 use Magento\Framework\View\Element\Template;
-/**
-use DevLab\FAQ\Model\ResourceModel\FAQ\Collection;
-use DevLab\FAQ\Model\ResourceModel\FAQ\CollectionFactory;
-*/
+
 /** colection fron Grid - join two tables devlab_faq ang customer_entity */
 use DevLab\FAQ\Model\ResourceModel\FAQ\Grid\Collection;
 use DevLab\FAQ\Model\ResourceModel\FAQ\Grid\CollectionFactory;
@@ -62,11 +59,6 @@ class FAQListData extends Template
 
         return $collection->getItems();
 
-
-           /*
-    *        return $this->collectionFactory->create()->addFieldToFilter('customer_id', '4')->getItems();
-    */
-       }
 
     public function getFAQ()
     {
