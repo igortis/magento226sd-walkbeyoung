@@ -49,18 +49,16 @@ class FAQListData extends Template
         if ($customerSession->isLoggedIn() == true) {
             $collection = $this->collectionFactory->create()
                 ->addFieldToFilter('customer_id', $customerSession->getCustomer()->getId());
-
         }
         else {
             $collection = $this->collectionFactory->create()
                 ->addFieldToFilter('customer_id', '0');
         }
-
-
-
+        
         return $collection->getItems();
 
-
+    }
+    
     public function getFAQ()
     {
 
