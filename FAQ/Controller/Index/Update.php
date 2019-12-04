@@ -11,6 +11,8 @@ use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\Cache\TypeListInterface;
 use Magento\Framework\App\Cache\Frontend\Pool;
 
+use Magento\Framework\Session\SessionManagerInterface;
+
 class Update extends \Magento\Framework\App\Action\Action
 {
     protected $scopeConfig;
@@ -18,10 +20,12 @@ class Update extends \Magento\Framework\App\Action\Action
     /** add flush cache */
     protected $cacheTypeList;
     protected $cacheFrontendPool;
-
+    protected $_sessionManager;
+﻿
     public function __construct(
         Context $context,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
+        SessionManagerInterface $sessionManager,
         \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList,
         \Magento\Framework\App\Cache\Frontend\Pool $cacheFrontendPool
     )
@@ -31,21 +35,30 @@ class Update extends \Magento\Framework\App\Action\Action
         /** add flush cache */
         $this->_cacheTypeList = $cacheTypeList;
         $this->_cacheFrontendPool = $cacheFrontendPool;
+        $this->_sessionManager = $sessionManager;
 
         parent::__construct($context);
     }
     public function execute()
     {
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $customerSession = $objectManager->create('Magento\Customer\Model\Session');
+
         $resultRedirect = $this->resultRedirectFactory->create();
 
         $params = $this->getRequest()->getParams();
         $model  = $this->_objectManager->create('DevLab\FAQ\Model\FAQ');
-
         $model->load( $params['faqid'] );
-        $model->setQuestion( $params['question'] );
-        $model->save();
 
-        
+        /** Check for customer_id*/
+        if ( $model['customer_id'] == $customerSession->getCustomer()->getId() ){
+            $model->setData('question', $params['question']);
+            $model->save();
+        }
+
+
+
+
         /** add flush cache */
         $types = array('db_ddl');
         foreach ($types as $type) {
