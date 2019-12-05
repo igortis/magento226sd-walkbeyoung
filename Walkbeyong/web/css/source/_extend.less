@@ -187,12 +187,35 @@ body { font-family:MyCustomFont; }
   }
 }
 /* Sign in or */
+/*
 .header.links li:nth-child(2):after{
   content:" or ";
   color:@mycolor-gray;
-  /* add this css becouse block SignIn is not good showed */
+
   display:inline-block;
 }
+*/
+/* add this css becouse block SignIn is not good showed */
+/* menu account 05-12-2019*/
+.header.links .customer-welcome:after{
+    content:" or ";
+    color:@mycolor-gray;
+    display:inline-block;
+    margin-left: 1px;
+  }
+.customer-welcome {
+  .header.links{
+    display: grid;
+  }
+}
+.header.links li:nth-child(2){
+  display: -webkit-inline-box;
+}
+.customer-name.active:after{
+  display: none;
+}
+
+
 
 .header.links .customer-welcome .action.switch{
   display: none;
@@ -819,7 +842,103 @@ body { font-family:MyCustomFont; }
   font-family: MyCustomFont-Main-FAQ;
   margin-left: 2%;
   margin-top: 40px;
-  h1{
+  h1{@import "slick.less";
+2
+@import "slick-theme.less";
+3
+​
+4
+/*@import url(http://uk.allfont.net/allfont.css?fonts=arial-narrow);*/
+5
+​
+6
+@mycolor-gray: #5A6465;
+7
+@mycolor-gray-subscribe: #505050;
+8
+@mycolor-gray-header-link: #7E7E7E;
+9
+@mycolor-gray-button-faq: #B7B7B7;
+10
+@mycolor-gray-button-panel: #434343;
+11
+@mycolor-orange-bold: #FF7E00;
+12
+@mycolor-orange: #FFA800;
+13
+@mycolor-orange-button-faq: #F7941D;
+14
+@mycolor-orange-header-link: #FFAA00;
+15
+@mycolor-white: #FFFFFF;
+16
+@mycolor-blue:#184F94;
+17
+@mycolor-gray-footer: #919191;
+18
+@mycolor-gray-accordion: #C0C0C0;
+19
+​
+20
+​
+21
+@font-face {
+22
+  font-family: MyCustomFont;
+23
+  src: url('../fonts/Avalon.ttf');
+24
+  font-style: normal;
+25
+}
+26
+@font-face {
+27
+  font-family: MyCustomFont-FAQ;
+28
+  src: url('../fonts/FreeSerif.ttf');
+29
+  font-style: normal;
+30
+}
+31
+@font-face {
+32
+  font-family: MyCustomFont-Main-FAQ;
+33
+  src: url('../fonts/Alice-Regular.ttf');
+34
+  font-style: normal;
+35
+}
+36
+@font-face {
+37
+  font-family: MyCustomFont-Text-FAQ;
+38
+  src: url('../fonts/COPILME_L.ttf');
+39
+  font-style: normal;
+40
+}
+41
+​
+42
+​
+43
+body { font-family:MyCustomFont; }
+44
+​
+45
+​
+46
+​
+47
+​
+48
+/*
+49
+.slick-prev.slick-arrow{
     margin-bottom: 30px;
     margin-top: 40px;
   }
