@@ -10,7 +10,6 @@ namespace DevLab\FAQ\Controller\Index;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\Cache\TypeListInterface;
 use Magento\Framework\App\Cache\Frontend\Pool;
-
 use Magento\Framework\Session\SessionManagerInterface;
 
 class Update extends \Magento\Framework\App\Action\Action
@@ -21,13 +20,13 @@ class Update extends \Magento\Framework\App\Action\Action
     protected $cacheTypeList;
     protected $cacheFrontendPool;
     protected $_sessionManager;
-﻿
+
     public function __construct(
         Context $context,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
-        SessionManagerInterface $sessionManager,
         \Magento\Framework\App\Cache\TypeListInterface $cacheTypeList,
-        \Magento\Framework\App\Cache\Frontend\Pool $cacheFrontendPool
+        \Magento\Framework\App\Cache\Frontend\Pool $cacheFrontendPool,
+        SessionManagerInterface $sessionManager
     )
     {
         $this->scopeConfig = $scopeConfig;
@@ -55,9 +54,6 @@ class Update extends \Magento\Framework\App\Action\Action
             $model->setData('question', $params['question']);
             $model->save();
         }
-
-
-
 
         /** add flush cache */
         $types = array('db_ddl');
